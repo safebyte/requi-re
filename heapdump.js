@@ -1,6 +1,6 @@
 'use strict';
 const heapdump = require('heapdump');
-const requi_re = require('./');
+const requiRe = require('./');
 
 for (let i = 0; i < 100000; i++) {
 	require('./fixture.js')();
@@ -9,7 +9,7 @@ for (let i = 0; i < 100000; i++) {
 heapdump.writeSnapshot(`require-${Date.now()}.heapsnapshot`);
 
 for (let i = 0; i < 100000; i++) {
-	requi_re('./fixture.js')();
+	requiRe('./fixture.js')();
 }
 
 heapdump.writeSnapshot(`requiRe-${Date.now()}.heapsnapshot`);
