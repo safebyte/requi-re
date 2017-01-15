@@ -1,4 +1,4 @@
-# requi-re [![Build Status](https://travis-ci.org/safebyte/requi-re.svg?branch=master)](https://travis-ci.org/safebyte/requi-re.svg?branch=master)
+# requi-re [![Build Status](https://travis-ci.org/safebyte/requi-re.svg?branch=master)](https://travis-ci.org/safebyte/requi-re)
 
 > Re-Require a module bypassing the [cache](https://nodejs.org/api/modules.html#modules_caching) when not in a production environment.
 
