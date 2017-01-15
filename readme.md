@@ -1,16 +1,35 @@
-# require-uncached [![Build Status](https://travis-ci.org/sindresorhus/require-uncached.svg?branch=master)](https://travis-ci.org/sindresorhus/require-uncached)
+# requi-re [![Build Status](https://travis-ci.org/sindresorhus/require-uncached.svg?branch=master)](https://travis-ci.org/sindresorhus/require-uncached)
 
-> Require a module bypassing the [cache](https://nodejs.org/api/modules.html#modules_caching)
+> Re-Require a module bypassing the [cache](https://nodejs.org/api/modules.html#modules_caching) when not in a production environment.
 
-Useful for testing purposes when you need to freshly require a module.
+Useful for development purposes when you need to freshly require a module after changing it.  
 
+`requi-re` is a fork of `require-uncached`
 
 ## Install
 
 ```
-$ npm install --save require-uncached
+$ npm install --save requi-re
 ```
 
+## Setup
+
+By default, `requi-re` returns node's native `require`, in order to *not fuck things up* in bad setups.
+
+Only when `NODE_ENV` is set to anything else than `production` (and is not `undefined`) all calls will return be fleshly required modules. 
+
+There are various ways of setting `NODE_ENV` on different operation systems. To avoid cross-plattform problems, the usage of the module [cross-env](https://github.com/kentcdodds/cross-env) is recommended.
+
+#### Defining the environment using the `package.json`
+```
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node app",
+    "test": "cross-env NODE_ENV=test node app.js"
+  }
+```
+
+Then start your app using `npm test` to enable cache-deletion when calling `requi-re`.  
+Notice: `npm start` and any other scripts starting your app will continue to behave as usual.
 
 ## Usage
 
@@ -21,24 +40,27 @@ module.exports = () => ++i;
 ```
 
 ```js
-const requireUncached = require('require-uncached');
-
 require('./foo')();
 //=> 1
 
 require('./foo')();
 //=> 2
 
-requireUncached('./foo')();
+// overwrite node's require for convenience
+require = require('requi-re');
+
+require('./foo')();
 //=> 1
 
-requireUncached('./foo')();
+require('./foo')();
 //=> 1
 ```
 
 
 ## Related
 
+- [cross-env](https://github.com/kentcdodds/cross-env) - Recommended for defining `NODE_ENV`
+- [require-uncached](https://github.com/sindresorhus/require-uncached) - Require a module bypassing the cache
 - [clear-require](https://github.com/sindresorhus/clear-require) - Clear a module from the require cache
 
 
