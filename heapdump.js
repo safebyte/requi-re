@@ -12,4 +12,4 @@ for (let i = 0; i < 100000; i++) {
 	requi_re('./fixture.js')();
 }
 
-heapdump.writeSnapshot(`requi-re-${Date.now()}.heapsnapshot`);
+heapdump.writeSnapshot(`requi_re-${Date.now()}.heapsnapshot`);
