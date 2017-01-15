@@ -11,7 +11,7 @@ module.exports =
 		// clear require cache in empty env
 		moduleId => {
 			// validate input
-			if (typeof moduleId !== 'string'){
+			if (typeof moduleId !== 'string') {
 				throw new TypeError('Expected a string');
 			}
 
@@ -22,8 +22,8 @@ module.exports =
 			if (require.cache[filePath] && require.cache[filePath].parent) {
 				let i = require.cache[filePath].parent.children.length;
 
-				while (i--){
-					if(require.cache[filePath].parent.children[i].id === filePath){
+				while (i--) {
+					if (require.cache[filePath].parent.children[i].id === filePath) {
 						require.cache[filePath].parent.children.splice(i, 1);
 					}
 				}
