@@ -1,4 +1,5 @@
 import test from 'ava';
+
 process.env.NODE_ENV = 'test';
 const m = require('./');
 
