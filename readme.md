@@ -2,9 +2,7 @@
 
 > Re-Require a module bypassing the [cache](https://nodejs.org/api/modules.html#modules_caching) when not in a production environment.
 
-Useful for development purposes when you need to freshly require a module after changing it.  
-
-`requi-re` is a fork of `require-uncached`
+Useful for development purposes when you need to freshly require a module after modifying it.  
 
 ## Install
 
@@ -66,4 +64,4 @@ require('./foo')();
 
 ## License
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+`requi-re` is a fork of `require-uncached`: MIT © [Sindre Sorhus](https://sindresorhus.com)
