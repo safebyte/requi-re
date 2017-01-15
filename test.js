@@ -1,7 +1,10 @@
 import test from 'ava';
-import m from './';
-
+// import m from './';
+// const test = require('ava');
 process.env.NODE_ENV = 'test';
+
+const m = require('./');
+
 
 test(t => {
 	const id = './fixture';
