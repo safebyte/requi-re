@@ -1,4 +1,4 @@
-# requi-re [![Build Status](https://travis-ci.org/sindresorhus/require-uncached.svg?branch=master)](https://travis-ci.org/sindresorhus/require-uncached)
+# requi-re [![Build Status](https://travis-ci.org/safebyte/requi-re.svg?branch=master)](https://travis-ci.org/safebyte/requi-re.svg?branch=master)
 
 > Re-Require a module bypassing the [cache](https://nodejs.org/api/modules.html#modules_caching) when not in a production environment.
 
@@ -24,11 +24,11 @@ There are various ways of setting `NODE_ENV` on different operation systems. To 
 ```
   "scripts": {
     "start": "cross-env NODE_ENV=production node app",
-    "test": "cross-env NODE_ENV=test node app.js"
+    "test": "cross-env NODE_ENV=development node app"
   }
 ```
 
-Then start your app using `npm test` to enable cache-deletion when calling `requi-re`.  
+Then start your app using `npm development` to enable cache-deletion when calling `requi-re`.  
 Notice: `npm start` and any other scripts starting your app will continue to behave as usual.
 
 ## Usage

@@ -1,6 +1,6 @@
 {
   "name": "requi-re",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Re-Require a module bypassing the cache when in a development environment (using NODE_ENV).",
   "license": "MIT",
   "repository": "safebyte/requi-re",
@@ -10,7 +10,7 @@
     "url": "sindresorhus.com"
   },
   "engines": {
-    "node": ">=6.9.2"
+    "node": ">=6.4.0"
   },
   "scripts": {
     "test": "xo && ava",
