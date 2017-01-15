@@ -9,7 +9,7 @@ for (let i = 0; i < 100000; i++) {
 heapdump.writeSnapshot(`require-${Date.now()}.heapsnapshot`);
 
 for (let i = 0; i < 100000; i++) {
-	uncached('./fixture.js')();
+	uncached('./fixture.js');
 }
 
 heapdump.writeSnapshot(`require-uncached-${Date.now()}.heapsnapshot`);
