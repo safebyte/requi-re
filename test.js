@@ -1,6 +1,7 @@
-process.env.NODE_ENV = 'test';
 import test from 'ava';
 import m from './';
+
+process.env.NODE_ENV = 'test';
 
 test(t => {
 	const id = './fixture';
