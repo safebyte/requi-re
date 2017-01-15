@@ -24,7 +24,7 @@ There are various ways of setting `NODE_ENV` on different operation systems. To 
 ```
   "scripts": {
     "start": "cross-env NODE_ENV=production node app",
-    "test": "cross-env NODE_ENV=development node app"
+    "development": "cross-env NODE_ENV=development node app"
   }
 ```
 
